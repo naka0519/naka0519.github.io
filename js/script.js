@@ -11,9 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    window.addEventListener("hashchange", function () {
-        const hash = window.location.hash.substring(1);
-        showSection(hash);
+    const tabLinks = document.querySelectorAll(".tab-link");
+    tabLinks.forEach(link => {
+        link.addEventListener("click", function (event) {
+            event.preventDefault();
+            const targetTab = link.getAttribute("data-tab");
+            showSection(targetTab);
+            history.pushState(null, '', `#${targetTab}`);
+        });
     });
 
     // 初期表示
