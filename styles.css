@@ -29,6 +29,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    cursor: pointer;
 }
 
 main {
@@ -36,11 +37,11 @@ main {
 }
 
 section {
-    display: none;
+    display: none; /* 全てのセクションを非表示に */
 }
 
 section.active {
-    display: block;
+    display: block; /* .active クラスが付与されたセクションのみ表示 */
 }
 
 footer {
